@@ -1,6 +1,10 @@
+import 'package:anime_verse/config/routes.dart';
 import 'package:anime_verse/widgets/app_scaffold.dart';
 import 'package:anime_verse/widgets/profile_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../screens/signin_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -183,38 +187,42 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: screenHeight * 0.04),
 
             // Logout Button
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // TODO: Implement logout functionality
-                },
-                icon: Icon(
-                  Icons.logout,
-                  size: screenWidth * 0.05,
-                ),
-                label: Text(
-                  'Logout',
-                  style: TextStyle(
-                    fontSize: screenWidth * 0.045,
-                    fontWeight: FontWeight.w600,
+            GestureDetector(
+              onTap: () => {
+                context.push('${AppRoutes.signin}')
+              },
+              child: Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    // TODO: Implement logout functionality
+                  },
+                  icon: Icon(
+                    Icons.logout,
+                    size: screenWidth * 0.05,
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red.withValues(alpha: 0.8),
-                  foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(
-                    vertical: screenHeight * 0.018,
+                  label: Text(
+                    'Logout',
+                    style: TextStyle(
+                      fontSize: screenWidth * 0.045,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(screenWidth * 0.04),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red.withValues(alpha: 0.8),
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(
+                      vertical: screenHeight * 0.018,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(screenWidth * 0.04),
+                    ),
+                    elevation: 5,
                   ),
-                  elevation: 5,
                 ),
               ),
             ),
-
             SizedBox(height: screenHeight * 0.03),
           ],
         ),

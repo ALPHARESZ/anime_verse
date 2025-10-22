@@ -1,6 +1,8 @@
+import 'package:anime_verse/providers/app_state_provider.dart';
 import 'package:anime_verse/widgets/app_scaffold.dart';
 import 'package:anime_verse/data/dummy_data.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/favorite_anime_card.dart';
 
@@ -11,9 +13,6 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-
-    // Get one anime from dummy data for display
-    final favoriteAnime = DummyData.animeList.first;
     
     return AppScaffold(
       appBar: AppBar(
@@ -88,18 +87,25 @@ class FavoriteScreen extends StatelessWidget {
 
           // Favorite Anime List
           Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
-              itemCount: 1,
-              itemBuilder: (context, index) {
-                return FavoriteAnimeCard(
-                  title: favoriteAnime.title,
-                  genre: favoriteAnime.genre,
-                  rating: favoriteAnime.rating,
-                  imagePath: favoriteAnime.imagePath,
+            child: Consumer<AppStateProvider>(
+              builder: (context, favoriteProvider, child){
+                final favorites = favoriteProvider.favorites;
+                return ListView.builder(
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+                  itemCount: 1,
+                  itemBuilder: (context, index) {
+                    final anime = favorites[index];
+                    return FavoriteAnimeCard(
+                      id: anime.id,
+                      title: anime.title,
+                      genre: anime.genre,
+                      rating: anime.rating,
+                      imagePath: anime.imagePath,
+                    );
+                  },
                 );
               },
-            ),
+            )
           ),
         ],
       ),
