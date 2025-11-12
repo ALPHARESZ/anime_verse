@@ -7,7 +7,7 @@ class AppStateProvider extends ChangeNotifier{
   List<Anime> _favorites = [];
   List<Anime> get favorites => _favorites;
   static const String _storageKey = 'favorite_anime_list';
-
+  
   bool isFavorite(String animeId){
     return _favorites.any((anime) => anime.id == animeId);
   }

@@ -30,7 +30,6 @@ flutter:
 
   assets:
     - assets/images/
-
   fonts:
     - family: Urbanist
       fonts:
