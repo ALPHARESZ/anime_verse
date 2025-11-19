@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
-  // untuk background
-  const GradientBackground({super.key, required this.child});
-
   final Widget child;
+
+  const GradientBackground({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        // definisi gradient awal
         gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
-            Color(0xFF1D1D2E), // warna awal
-            Color(0xFF25254D)  // warna akhir
+            Color(0xFF333465),
+            Color(0xFF0b395e),
           ],
-          begin: Alignment.topLeft, // arah mulai gradien
-          end: Alignment.bottomLeft, //arah akhir gradien
-        )
+        ),
       ),
-      // Tampilkan widget child di atas Container yang sudah bergradient
       child: child,
     );
   }
 }
-

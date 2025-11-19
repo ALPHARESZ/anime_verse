@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'gradient_background.dart';
+import 'package:anime_verse/widgets/gradient_background.dart';
 
 class AppScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;

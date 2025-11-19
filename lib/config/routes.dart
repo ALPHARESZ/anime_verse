@@ -16,8 +16,6 @@ class AppRoutes {
   static const String favorites = '/favorites';
   static const String profile = '/profile';
   static const String details = '/details';
-
-  static get signin => null;
 }
 
 GoRouter createRouter() {
@@ -39,13 +37,13 @@ GoRouter createRouter() {
       ),
 
       GoRoute(
-        path: '${AppRoutes.details}/:id',
-        name: 'detail',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) {
-          final animeId = state.pathParameters['id'] ?? '';
-          return DetailScreen(animeId: animeId);
-        }
+          path: '${AppRoutes.details}/:id',
+          name: 'detail',
+          parentNavigatorKey: rootNavigatorKey,
+          builder: (context, state) {
+            final animeId = state.pathParameters['id'] ?? '';
+            return DetailScreen(animeId: animeId);
+          }
       ),
 
       StatefulShellRoute.indexedStack(
