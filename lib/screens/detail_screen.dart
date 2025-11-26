@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:anime_verse/models/anime.dart';
-import 'package:anime_verse/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../models/anime.dart';
+import '../widgets/app_scaffold.dart';
 import '../providers/app_state_provider.dart';
 
 class DetailScreen extends StatefulWidget {

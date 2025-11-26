@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/anime.dart';
+
 import 'anime_card.dart';
+import '../models/anime.dart';
 
 class AnimeView extends StatelessWidget {
   final List<Anime> animeList;
