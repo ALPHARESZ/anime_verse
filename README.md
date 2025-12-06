@@ -63,6 +63,17 @@ lib/
 Berikut adalah demonstrasi penggunaan aplikasi Anime Verse (GDrive). Silakan klik link berikut ini untuk menonton: **[Demo Aplikasi](https://drive.google.com/drive/folders/10ontC_lLTMl-_Wo3xWHbvADpqGxwmmpz)**
 
 
+## Application Screen
+| Sign In | Sign Up | User Profile |
+|:-------:|:-------:|:------------:|
+| <img src="screenshots/SIgnIn.png" width="200"> | <img src="screenshots/SignUp.png" width="200"> | <img src="screenshots/Profile.png" width="200"> |
+
+
+| Home Screen | Movie Detail | Favorites |
+|:-----------:|:------------:|:---------:|
+| <img src="screenshots/Home.png" width="200"> | <img src="screenshots/Detail.png" width="200"> | <img src="screenshots/Favorite.png" width="200"> |
+
+
 ##  Get Started
 ### 1. Clone Repository
 ```bash
