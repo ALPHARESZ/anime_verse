@@ -7,7 +7,7 @@ class FirestoreService {
 
   // Collection reference
   CollectionReference _userCollection() {
-    return _firestore.collection('user');
+    return _firestore.collection('users');
   }
 
   // Get favorites stream
