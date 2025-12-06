@@ -10,7 +10,7 @@ class FirestoreService {
     return _firestore.collection('user');
   }
 
-  // Geet favorites stream
+  // Get favorites stream
   Stream<List<Anime>> getFavoritesStream(String userId) {
     return _userCollection()
     .doc(userId)
